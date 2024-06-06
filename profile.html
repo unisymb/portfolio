@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Wahidul Islam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Wahidul Islam</h1>
+            <p>Software and Web Developer & Designer</p>
+        </div>
+    </header>
+
+    <section id="profile">
+        <div class="container">
+            <h2>Profile</h2>
+            <p>Hello! I'm Wahidul Islam, a passionate web developer with experience in creating dynamic and responsive websites. I love coding and enjoy learning new technologies to enhance my skills.</p>
+            <img src="profile.jpg" alt="Wahidul Islam" class="profile-img">
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Python</li>
+                <li>VCS (Version Control Systems)</li>
+                <li>VBA</li>
+                <li>Business Automation</li>
+                <li>PHP</li>
+                <li>C</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>.NET</li>
+                <li>Java</li>
+                <li>3D Graphics</li>
+                <li>Canvas Design</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Project 1</h3>
+                    <p>Description will be given</p>
+                    <a href="#" class="button">View More</a>
+                </div>
+                <div class="project">
+                    <h3>Project 2</h3>
+                    <p>Description will be given</p>
+                    <a href="#" class="button">View More</a>
+                </div>
+                <div class="project">
+                    <h3>Project 3</h3>
+                    <p>Description will be given</p>
+                    <a href="#" class="button">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <button id="toggle-layouts">Toggle Layouts</button>
+
+    <script>
+        document.getElementById('toggle-layouts').addEventListener('click', () => {
+            // Send a message to the parent window (assuming the profile page is the parent)
+            window.parent.postMessage('toggle-layouts', '*');
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstLayout = document.querySelector('.first.layoutcontent');
+            const secondLayout = document.querySelector('.second.layoutcontent');
+
+            // Function to toggle layouts
+            const toggleLayouts = () => {
+                if (firstLayout.style.width === '0px') {
+                    // Show the first layout and reset second layout width
+                    firstLayout.style.width = '20%';
+                    secondLayout.style.width = '59%';
+                } else {
+                    // Hide the first layout and expand second layout
+                    firstLayout.style.width = '0';
+                    secondLayout.style.width = '79%';
+                }
+            };
+
+            // Listen for messages from other windows/frames
+            window.addEventListener('message', (event) => {
+                if (event.data === 'toggle-layouts') {
+                    toggleLayouts();
+                }
+            });
+        });</script>
+    <script src="script.js"></script>
+</body>
+</html>
