@@ -69,39 +69,6 @@
             </div>
         </div>
     </section>
-    <button id="toggle-layouts">Toggle Layouts</button>
-
-    <script>
-        document.getElementById('toggle-layouts').addEventListener('click', () => {
-            // Send a message to the parent window (assuming the profile page is the parent)
-            window.parent.postMessage('toggle-layouts', '*');
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const firstLayout = document.querySelector('.first.layoutcontent');
-            const secondLayout = document.querySelector('.second.layoutcontent');
-
-            // Function to toggle layouts
-            const toggleLayouts = () => {
-                if (firstLayout.style.width === '0px') {
-                    // Show the first layout and reset second layout width
-                    firstLayout.style.width = '20%';
-                    secondLayout.style.width = '59%';
-                } else {
-                    // Hide the first layout and expand second layout
-                    firstLayout.style.width = '0';
-                    secondLayout.style.width = '79%';
-                }
-            };
-
-            // Listen for messages from other windows/frames
-            window.addEventListener('message', (event) => {
-                if (event.data === 'toggle-layouts') {
-                    toggleLayouts();
-                }
-            });
-        });</script>
     <script src="script.js"></script>
 </body>
 </html>
