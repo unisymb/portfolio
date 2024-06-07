@@ -87,17 +87,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // adjust width
 
 //about
-document.addEventListener('DOMContentLoaded', () => {
-    const aboutLink = document.querySelector('.about');
-    const iframe = document.querySelector('.mainiframe');
-
-    aboutLink.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default link behavior
-
-        // Insert the src value into the iframe
-        iframe.src = 'about.html'; // Replace 'about.html' with your actual about page URL
-        // Show the about section
-        //document.getElementById('about').style.display = 'block';
-    });
-});
 
